@@ -1,0 +1,129 @@
+@import "./abstracts/reset";
+@import "./abstracts/functions";
+@import "./abstracts/mixins";
+@import "./abstracts/variables";
+@import "./base/fonts";
+@import "./base/base";
+
+body {
+    background: $dark-blue;
+    overflow-x: hidden;
+    height: 100%;
+    @include Manrope-font;
+}
+
+main {
+    height: inherit;
+    @include display-flex(center, center);
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 5%;
+    .card {
+        max-width: 680px;
+        background: $dark-grayish-blue;
+        border-radius: 10px;
+        padding: $p-3;
+        text-align: center;
+
+        .card-body {
+            position: relative;
+            .card-title {
+                h1 {
+                    color: $neon-green;
+                    text-transform: uppercase;
+                    letter-spacing: 5px;
+                    margin-bottom: $p-1;
+                }
+            }
+            .card-desc {
+                padding-bottom: $p-1_5;
+                .advice {
+                    color: $light-cyan;
+                    font-size: font-size(font-20);
+                    font-weight: font-weight(font-bolder);
+                }
+            }
+
+            .divider {
+                margin: 0 auto;
+                padding-bottom: $p-1_5;
+            }
+            .toggle {
+                position: absolute;
+                bottom: -5rem;
+                left: 50%;
+                transform: translateX(-50%);
+                background: $neon-green;
+                border-radius: 100%;
+                padding: 1rem 1.2rem;
+                cursor: pointer;
+
+                &:hover,
+                &:focus,
+                &:active {
+                    -webkit-box-shadow: 0px 0px 30px 13px rgba(82, 255, 168, 0.6);
+                    -moz-box-shadow: 0px 0px 30px 13px rgba(82, 255, 168, 0.6);
+                    box-shadow: 0px 0px 30px 13px rgba(82, 255, 168, 0.6);
+                    img {
+                        box-shadow: 1px 1px 229px 0px rgba(82, 255, 168, 1);
+                        -webkit-box-shadow: 1px 1px 229px 0px rgba(82, 255, 168, 1);
+                        -moz-box-shadow: 1px 1px 229px 0px rgba(82, 255, 168, 1);
+                    }
+                }
+            }
+        }
+
+        @include breakpoint(md, min) {
+            .card-body {
+                .card-desc {
+                    .advice {
+                        font-size: font-size(font-28);
+                    }
+                }
+                .divider-container {
+                    .d-block {
+                        display: block;
+                    }
+
+                    .d-none {
+                        display: none;
+                    }
+                }
+            }
+        }
+
+        @include breakpoint(md, max) {
+            .divider-container {
+                margin-bottom: $p-1;
+                .d-block {
+                    display: none;
+                }
+
+                .d-none {
+                    display: block;
+                }
+            }
+        }
+
+        @include breakpoint(md, max) {
+            max-width: 350px;
+            padding: $p-3 $p-1_5 $p-1_5 $p-1_5;
+
+            .card-body {
+                .card-title {
+                    h1 {
+                        font-size: font-size(font-12);
+                    }
+                }
+                .toggle {
+                    bottom: -4.5rem;
+                    //padding: 0.5rem 0.7rem;
+
+                    img {
+                        width: 24px;
+                    }
+                }
+            }
+        }
+    }
+}
