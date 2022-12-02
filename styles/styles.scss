@@ -57,6 +57,12 @@ main {
                 border-radius: 100%;
                 padding: 1rem 1.2rem;
                 cursor: pointer;
+                border: none;
+
+                &:disabled {
+                    background: darken($neon-green, 40%);
+                    cursor: not-allowed;
+                }
 
                 &:hover,
                 &:focus,
@@ -67,7 +73,7 @@ main {
                     img {
                         box-shadow: 1px 1px 229px 0px rgba(82, 255, 168, 1);
                         -webkit-box-shadow: 1px 1px 229px 0px rgba(82, 255, 168, 1);
-                        -moz-box-shadow: 1px 1px 229px 0px rgba(82, 255, 168, 1);
+                        // -moz-box-shadow: 1px 1px 229px 0px rgba(82, 255, 168, 1);
                     }
                 }
             }

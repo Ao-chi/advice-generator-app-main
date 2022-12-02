@@ -15,5 +15,14 @@ function getAdvice() {
             adviceId.innerHTML = id;
         });
 }
+
+function disableBtn() {
+    toggle.disabled = true;
+    setTimeout(() => {
+        toggle.disabled = false;
+    }, 1500);
+    getAdvice();
+}
+
 getAdvice();
-toggle.addEventListener("click", getAdvice);
+toggle.addEventListener("click", disableBtn);
