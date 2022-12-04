@@ -11,6 +11,17 @@ body {
     height: 100%;
     @include Manrope-font;
 }
+@keyframes show {
+    0% {
+        transform: rotate(0);
+    }
+    50% {
+        transform: rotate(180deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
 
 main {
     height: inherit;
@@ -25,6 +36,9 @@ main {
         padding: $p-3;
         text-align: center;
 
+        &.rotate {
+            animation: show 1s ease-in-out 01s 1;
+        }
         .card-body {
             position: relative;
             .card-title {
@@ -73,6 +87,7 @@ main {
                     img {
                         box-shadow: 1px 1px 229px 0px rgba(82, 255, 168, 1);
                         -webkit-box-shadow: 1px 1px 229px 0px rgba(82, 255, 168, 1);
+                        transform: rotate(360deg);
                         // -moz-box-shadow: 1px 1px 229px 0px rgba(82, 255, 168, 1);
                     }
                 }
